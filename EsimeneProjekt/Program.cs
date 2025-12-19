@@ -45,6 +45,18 @@
                 Console.WriteLine("Alaealisi sisse ei lasta, mine vembutembumaale. 🤡");
             }
 
+            /*
+             näiteprogramm 3:
+
+            klient tahab et programm teeks:
+             - küsib kasutajalt tema kasutajaNime
+             - küsib kasutajalt tema parooli
+             - logib kasutaja sisse kui mõlemad on õiged
+             */
+            // hint: mida teeb &&?
+
+            /* siia käib vooskeemi järgi kirjutatud kood näidisülesanne 3 kohta */
+
             ////ctrl + k + c/u
 
             ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
