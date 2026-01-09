@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1062" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="70" dy="619" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -229,6 +229,9 @@
         </mxCell>
         <mxCell id="T1qJkAO5i6RlmFpipgkX-42" value="// kirjuta programm mis&#xa;/*&#xa;küsib kasutajalt tema vanust, ✅&#xa;kui vanus on väiksem kui 0 või sama kui 0, kuva kasutajale sõnum ajarändureid me ei teeninda ✅&#xa;kui vanus on suurem kui 0 aga väiksem kui 18, küsi kasutajalt tema nime, ning tagasta sõnum kallis &lt;nimi&gt;, palun kutsu oma lapsevanem siia. ✅&#xa;kui vanus on suurem kui 18, küsi kasutajalt tema eesnime, ja perekonnanime ✅&#xa;tee tingimuskontroll, mis kontrollib et eesnimi ei oleks tühi, või perekonnanimi ei oleks tühi, ning tagasta sõnum sisestama pidi mõlemad nime ✅&#xa;kui aga mõlemad nimed on olemas, siis tagasta kasutajale tema ees ja perekonnanimega tervitus. ✅&#xa;*/" style="text;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="250" y="1810" width="560" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="T1qJkAO5i6RlmFpipgkX-45" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="420" y="500" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

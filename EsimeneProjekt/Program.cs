@@ -94,55 +94,98 @@
 
             /* näiteülesanne 5 */
 
-            Console.WriteLine("Kui kaugele oli su viimane kuulitõuge (m)?");
-            float kaugus = float.Parse(Console.ReadLine());
-            if ( kaugus <= 1.00 && kaugus >= 0.00 )
+            //Console.WriteLine("Kui kaugele oli su viimane kuulitõuge (m)?");
+            //float kaugus = float.Parse(Console.ReadLine());
+            //if ( kaugus <= 1.00 && kaugus >= 0.00 )
+            //{
+            //    Console.WriteLine("Sa suudad kindlasti rohkem, cmon bruh");
+            //}
+            //else if (kaugus <= 2.00 && kaugus >= 1.01)
+            //{
+            //    Console.WriteLine("Noh tuleb juba, jõuad veel!");
+            //}
+            //else if (kaugus <= 3.00 && kaugus >= 2.01 )
+            //{
+            //    Console.WriteLine("TUBLI kolm meetrit umbes, peaaegu, vist... not sure");
+            //}
+            //else if (kaugus < 0)
+            //{
+            //    Console.WriteLine("MIKS SA TAGURPIDI VISKAD?!?!?!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Ossaraks, seda on varsti orbiidilt näha");
+            //}
+
+            /* näiteülesanne 6 */
+            // kirjuta programm mis
+            /*
+            küsib kasutajalt tema vanust, ✅
+            kui vanus on väiksem kui 0 või sama kui 0, kuva kasutajale sõnum ajarändureid me ei teeninda ✅
+            kui vanus on suurem kui 0 aga väiksem kui 18, küsi kasutajalt tema nime, ning tagasta sõnum kallis <nimi>, palun kutsu oma lapsevanem siia. ✅
+            kui vanus on suurem kui 18, küsi kasutajalt tema eesnime, ja perekonnanime ✅
+            tee tingimuskontroll, mis kontrollib et eesnimi ei oleks tühi, või perekonnanimi ei oleks tühi, ning tagasta sõnum sisestama pidi mõlemad nime ✅
+            kui aga mõlemad nimed on olemas, siis tagasta kasutajale tema ees ja perekonnanimega tervitus. ✅
+            */
+
+            Console.WriteLine("Palun sisesta oma vanus, kirjuta täisarvuna: ");
+            int isikuVanus = 0;
+            isikuVanus = int.Parse(Console.ReadLine());
+            if (isikuVanus <= 0)
             {
-                Console.WriteLine("Sa suudad kindlasti rohkem, cmon bruh");
+                Console.WriteLine("Ajarändureid me ei teeninda");
             }
-            else if (kaugus <= 2.00 && kaugus >= 1.01)
+            else if (isikuVanus > 0 && isikuVanus < 18)
             {
-                Console.WriteLine("Noh tuleb juba, jõuad veel!");
-            }
-            else if (kaugus <= 3.00 && kaugus >= 2.01 )
-            {
-                Console.WriteLine("TUBLI kolm meetrit umbes, peaaegu, vist... not sure");
-            }
-            else if (kaugus < 0)
-            {
-                Console.WriteLine("MIKS SA TAGURPIDI VISKAD?!?!?!");
+                Console.WriteLine("Palun sisesta oma nimi:");
+                string kasutajaNimi = "";
+                kasutajaNimi = Console.ReadLine();
+                Console.WriteLine($"Kallis {kasutajaNimi}, palun kutsu siia oma lapsevanem.");
             }
             else
             {
-                Console.WriteLine("Ossaraks, seda on varsti orbiidilt näha");
+                Console.WriteLine("Palun kirjuta siia oma Eesnimi:");
+                string eesNimi = "";
+                eesNimi = Console.ReadLine();
+                Console.WriteLine("Palun kirjuta siia ka oma Perekonnanimi:");
+                string perekonnaNimi = "";
+                perekonnaNimi = Console.ReadLine();
+                if(eesNimi == "" || perekonnaNimi == "")
+                {
+                    Console.WriteLine("Sisestama pidi mõlemad nimed >:C");
+                }
+                else
+                {
+                    Console.WriteLine($"Tere päevast {eesNimi} {perekonnaNimi}!");
+                }
             }
 
-            /*
-                üleval harjutused
+                /*
+                    üleval harjutused
 
-                https://meet.google.com/qjt-wofj-gdb
+                    https://meet.google.com/qjt-wofj-gdb
 
-                all teooria
-                */
+                    all teooria
+                    */
 
-            ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
-            //string tekst = "mingisugune inimloetav tekstike"; //tekst
-            //char täht = 'A';
-            //int arv = 1; //täisarv
-            //float komakohagaarv = 1.5f; //32bit
-            //double suuremkomakohagaarv = 1.5d; //64bit
-            //decimal kümnendsüsteemiskomakohagaarv = 1.5M;
-            //var x = 123; //Umbmäärase andmetüübiga ajutine muutuja
-            //var y = "ABC";
-            //bool jahvõiei = false; //kas true või false.
+                ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
+                //string tekst = "mingisugune inimloetav tekstike"; //tekst
+                //char täht = 'A';
+                //int arv = 1; //täisarv
+                //float komakohagaarv = 1.5f; //32bit
+                //double suuremkomakohagaarv = 1.5d; //64bit
+                //decimal kümnendsüsteemiskomakohagaarv = 1.5M;
+                //var x = 123; //Umbmäärase andmetüübiga ajutine muutuja
+                //var y = "ABC";
+                //bool jahvõiei = false; //kas true või false.
 
-            ///* Muutuja nime näide: */
-            ////string string = "abc"; //is bäd
-            //string sõne = "abc"; //is gud
+                ///* Muutuja nime näide: */
+                ////string string = "abc"; //is bäd
+                //string sõne = "abc"; //is gud
 
-            /*   -= O M I S T U S O P E R A A T O R I D =-          */
-            // =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
-            int muutuja = 1;
+                /*   -= O M I S T U S O P E R A A T O R I D =-          */
+                // =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
+                int muutuja = 1;
             // +=   -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
             muutuja += 2;
             // -=   -> võrdusmärk mille ees on miinus, automaatselt lahutab muutujas olevast väärtusest võrdusmärgi teisel pool oleva väärtuse
