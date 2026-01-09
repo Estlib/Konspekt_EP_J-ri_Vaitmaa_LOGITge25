@@ -1,0 +1,84 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="819" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="F03nRizAO4-kaosCNSs3-0" value="// kirjuta programm mis&#xa;/*&#xa;küsib kasutajalt tema vanust, ✅&#xa;kui vanus on väiksem kui 0 või sama kui 0, kuva kasutajale sõnum ajarändureid me ei teeninda&#xa;kui vanus on suurem kui 0 aga väiksem kui 18, küsi kasutajalt tema nime, ning tagasta sõnum kallis &lt;nimi&gt;, palun kutsu oma lapsevanem siia.&#xa;kui vanus on suurem kui 18, küsi kasutajalt tema eesnime, ja perekonnanime&#xa;tee tingimuskontroll, mis kontrollib et eesnimi ei oleks tühi, või perekonnanimi ei oleks tühi, ning tagasta sõnum sisestama pidi mõlemad nime&#xa;kui aga mõlemad nimed on olemas, siis tagasta kasutajale tema ees ja perekonnanimega tervitus.&#xa;*/" style="text;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="920" width="560" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-1" target="F03nRizAO4-kaosCNSs3-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-1" value="Algus" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="280" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-2" target="F03nRizAO4-kaosCNSs3-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-2" value="Kuva kasutajale tekst: &lt;br&gt;&quot;palun sisesta oma vanus&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-5" target="F03nRizAO4-kaosCNSs3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-5" value="Tekita täisarvu tüüpi muutuja &quot;isikuVanus&quot; mille sisse &lt;br&gt;omistame algväärtusena &lt;br&gt;arvu 0" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="380" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-8" target="F03nRizAO4-kaosCNSs3-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-8" value="Oota kuni kasutaja sisestab käsureale mingisuguse väärtuse ning omista see muutujasse &quot;isikuVanus&quot;" style="whiteSpace=wrap;html=1;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="260" y="470" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-10" target="F03nRizAO4-kaosCNSs3-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-14" value="JAH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="F03nRizAO4-kaosCNSs3-13">
+          <mxGeometry x="-0.104" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-10" target="F03nRizAO4-kaosCNSs3-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-22" value="EI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="F03nRizAO4-kaosCNSs3-17">
+          <mxGeometry x="0.1999" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-10" value="Kas muutujas &lt;br&gt;&quot;isikuVanus&quot; on väärtus &lt;br&gt;väiksem või võrdne &lt;br&gt;0 arvuga?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="560" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-12" value="Kuva kasutajale tekst: &lt;br&gt;&quot;Ajarändureid me ei teeninda&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="570" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-16" target="F03nRizAO4-kaosCNSs3-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-21" value="JAH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="F03nRizAO4-kaosCNSs3-20">
+          <mxGeometry x="-0.1036" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-16" value="Kas muutujas &lt;br&gt;&quot;isikuVanus&quot; on väärtus &lt;br&gt;suurem kui 0?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="670" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-19" target="F03nRizAO4-kaosCNSs3-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-25" value="JAH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="F03nRizAO4-kaosCNSs3-24">
+          <mxGeometry x="-0.6111" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-19" value="Kas muutujas &lt;br&gt;&quot;isikuVanus&quot; on väärtus &lt;br&gt;väiksem kui 18?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="520" y="670" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="F03nRizAO4-kaosCNSs3-23" value="Kuva kasutajale tekst: &lt;br&gt;&quot;Palun sisesta oma nimi&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="520" y="790" width="200" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -59,48 +59,71 @@
 
             ////ctrl + k + c/u
 
-            int mingiArv = 4;
+            //int mingiArv = 4;
 
-            mingiArv = mingiArv + 15; //
-            mingiArv = mingiArv * 15; //
-            mingiArv = mingiArv - 15; //
-            mingiArv = mingiArv / 15; //
-
-
-            mingiArv += 15; //
-            mingiArv -= 15; //
-            mingiArv *= 15; //
-            mingiArv /= 15; //
-
-            /* näiteülesanne 4 */
-            Console.WriteLine("Palun sisesta oma vanus"); 
-            // esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
-            int kasutajavanus = int.Parse(Console.ReadLine()); 
-            // tekitame muutuja kasutajavanus ning omistame sinna käsurealt int.Parser abiga täisarvu
-            Console.WriteLine("Palun sisesta oma vanavanema vanus"); 
-            // esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
-            int kasutajaVanavanemaVanus = int.Parse(Console.ReadLine()); 
-            // tekitame muutuja kasutajaVanavanemaVanus ning omistame sinna käsurealt int.Parser abiga täisarvu
-            int vanusteVahe = kasutajaVanavanemaVanus - kasutajavanus; 
-            // tekitame uue täisarvu muutuja kuhu omistame avaldise kasutajaVanavanemaVanus - kasutajavanus tulemuse
-            Console.WriteLine(kasutajaVanavanemaVanus - kasutajavanus);
-            // saab ka otse kuvada, ilma muutujata
-            Console.WriteLine("Kui palju sa vanem oled?");
-            // esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
-            kasutajavanus += int.Parse(Console.ReadLine());
-            // kasutame omistusoperaatorit, et lisada muutujale kasutaja poolt esitatud täisarvu
-            Console.WriteLine("vanuste vahe on nüüd: "+(kasutajaVanavanemaVanus - kasutajavanus));
-            // kuvame uuesti vanuste vahe koos tekstiga
+            //mingiArv = mingiArv + 15; //
+            //mingiArv = mingiArv * 15; //
+            //mingiArv = mingiArv - 15; //
+            //mingiArv = mingiArv / 15; //
 
 
+            //mingiArv += 15; //
+            //mingiArv -= 15; //
+            //mingiArv *= 15; //
+            //mingiArv /= 15; //
+
+            ///* näiteülesanne 4 */
+            //Console.WriteLine("Palun sisesta oma vanus"); 
+            //// esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
+            //int kasutajavanus = int.Parse(Console.ReadLine()); 
+            //// tekitame muutuja kasutajavanus ning omistame sinna käsurealt int.Parser abiga täisarvu
+            //Console.WriteLine("Palun sisesta oma vanavanema vanus"); 
+            //// esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
+            //int kasutajaVanavanemaVanus = int.Parse(Console.ReadLine()); 
+            //// tekitame muutuja kasutajaVanavanemaVanus ning omistame sinna käsurealt int.Parser abiga täisarvu
+            //int vanusteVahe = kasutajaVanavanemaVanus - kasutajavanus; 
+            //// tekitame uue täisarvu muutuja kuhu omistame avaldise kasutajaVanavanemaVanus - kasutajavanus tulemuse
+            //Console.WriteLine(kasutajaVanavanemaVanus - kasutajavanus);
+            //// saab ka otse kuvada, ilma muutujata
+            //Console.WriteLine("Kui palju sa vanem oled?");
+            //// esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
+            //kasutajavanus += int.Parse(Console.ReadLine());
+            //// kasutame omistusoperaatorit, et lisada muutujale kasutaja poolt esitatud täisarvu
+            //Console.WriteLine("vanuste vahe on nüüd: "+(kasutajaVanavanemaVanus - kasutajavanus));
+            //// kuvame uuesti vanuste vahe koos tekstiga
+
+            /* näiteülesanne 5 */
+
+            Console.WriteLine("Kui kaugele oli su viimane kuulitõuge (m)?");
+            float kaugus = float.Parse(Console.ReadLine());
+            if ( kaugus <= 1.00 && kaugus >= 0.00 )
+            {
+                Console.WriteLine("Sa suudad kindlasti rohkem, cmon bruh");
+            }
+            else if (kaugus <= 2.00 && kaugus >= 1.01)
+            {
+                Console.WriteLine("Noh tuleb juba, jõuad veel!");
+            }
+            else if (kaugus <= 3.00 && kaugus >= 2.01 )
+            {
+                Console.WriteLine("TUBLI kolm meetrit umbes, peaaegu, vist... not sure");
+            }
+            else if (kaugus < 0)
+            {
+                Console.WriteLine("MIKS SA TAGURPIDI VISKAD?!?!?!");
+            }
+            else
+            {
+                Console.WriteLine("Ossaraks, seda on varsti orbiidilt näha");
+            }
 
             /*
-             üleval harjutused
-             
-             https://meet.google.com/qjt-wofj-gdb
+                üleval harjutused
 
-             all teooria
-             */
+                https://meet.google.com/qjt-wofj-gdb
+
+                all teooria
+                */
 
             ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
             //string tekst = "mingisugune inimloetav tekstike"; //tekst
@@ -134,7 +157,31 @@
             // ++   -> on kiirtehe, mis muutujale liidab ainult ühe juurde.
             muutuja++; 
             // --   -> on kiirtehe, mis muutujast lahutab ainult ühe maha.
-            muutuja--; 
+            muutuja--;
+
+            /*   -= V Õ R D L U S O P E R A A T O R I D =-          */
+            // ==   ->  "on võrdne/on täpselt sama" - Võrdusmärkide ühel pool olev objekt peab vastama
+            //          oma olemuselt täpselt võrdusmärkide teisel pool oleva objektiga
+            // >    ->  "on suurem kui" - Märgist vasakul pool olev objekt peaks olema suurem kui paremal pool olev objekt
+            // <    ->  "on väiksem kui" - Märgist vasakul pool olev objekt peaks olema väiksem kui paremal pool olev objekt
+            // >=   ->  "on suurem kui, või samavõrdne" - Märgist vasakul pool olev objekt peaks olema vähemalt sama suur või suurem
+            //          kui paremal pool olev objekt
+            // <=   ->  "on väiksem kui, või samavõrdne" - Märgist vasakul pool olev objekt peaks olema maksimaalselt sama suur või väiksem
+            //          kui paremal pool olev objekt
+            // !=   ->  "ei tohi olla" võrdusmärgi vasakul pool olev objekt ei tohi omada IDENTSET kuju paremal pool oleva objektiga, kõik muud
+            //          väärtused on lubatud.
+
+            /*   -= L O O G I L I S E D    T E H T E D =-          */
+            // &&   ->  "AND" loogiline tehe, mida kasutatakse tingimuste kirjeldamisel, ning mis annab positiivse vastuse "true" juhul kui
+            //          mõlemal pool märki "&&" olevad tingimused omakorda annavad oma avaldise tulemusena "true"
+            //          või teisisõnu: true + true = true
+            // ||   ->  "OR" loogiline tehe, mida kasutatakse tingimuste kirjeldamisel, ning mis annab positiivse vastuse "true" juhul kui
+            //          ühel pool märki "||" olev tingimus annab oma avaldise tulemusena "true", ei ole vahet millisel pool märki
+            //          või teisisõnu: true + false = true
+            // !    ->  "NOT" loogiline tehe, mida kasutatakse tingimuse avaldise tulemuse inverteerimiseks. Tulemus mis muidu tagastaks "true",
+            //          hüüumärgi abil nüüd tagastab false, ja vastupidi - tulemus mis muidu tagastaks "false", nüüd tagastab "true".
+            //          ehk teisisõnu: true = false / false = true
+
         }
     }
 }
