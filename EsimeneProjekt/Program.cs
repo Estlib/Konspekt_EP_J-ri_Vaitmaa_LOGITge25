@@ -160,32 +160,32 @@
                 }
             }
 
-                /*
-                    üleval harjutused
+            /*
+                üleval harjutused
 
-                    https://meet.google.com/qjt-wofj-gdb
+                https://meet.google.com/qjt-wofj-gdb
 
-                    all teooria
-                    */
+                all teooria
+                */
 
-                ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
-                //string tekst = "mingisugune inimloetav tekstike"; //tekst
-                //char täht = 'A';
-                //int arv = 1; //täisarv
-                //float komakohagaarv = 1.5f; //32bit
-                //double suuremkomakohagaarv = 1.5d; //64bit
-                //decimal kümnendsüsteemiskomakohagaarv = 1.5M;
-                //var x = 123; //Umbmäärase andmetüübiga ajutine muutuja
-                //var y = "ABC";
-                //bool jahvõiei = false; //kas true või false.
+            ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
+            //string tekst = "mingisugune inimloetav tekstike"; //tekst
+            //char täht = 'A';
+            //int arv = 1; //täisarv
+            //float komakohagaarv = 1.5f; //32bit
+            //double suuremkomakohagaarv = 1.5d; //64bit
+            //decimal kümnendsüsteemiskomakohagaarv = 1.5M;
+            //var x = 123; //Umbmäärase andmetüübiga ajutine muutuja
+            //var y = "ABC";
+            //bool jahvõiei = false; //kas true või false.
 
-                ///* Muutuja nime näide: */
-                ////string string = "abc"; //is bäd
-                //string sõne = "abc"; //is gud
+            ///* Muutuja nime näide: */
+            ////string string = "abc"; //is bäd
+            //string sõne = "abc"; //is gud
 
-                /*   -= O M I S T U S O P E R A A T O R I D =-          */
-                // =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
-                int muutuja = 1;
+            /*   -= O M I S T U S O P E R A A T O R I D =-          */
+            // =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
+            int muutuja = 1;
             // +=   -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
             muutuja += 2;
             // -=   -> võrdusmärk mille ees on miinus, automaatselt lahutab muutujas olevast väärtusest võrdusmärgi teisel pool oleva väärtuse
@@ -225,6 +225,21 @@
             //          hüüumärgi abil nüüd tagastab false, ja vastupidi - tulemus mis muidu tagastaks "false", nüüd tagastab "true".
             //          ehk teisisõnu: true = false / false = true
 
+            /*   -= T I N G I M U S L A U S E =-                   */
+            if (true)       //  Kaitstud sõna "if" kutsub esile tingimuslause, mille tingimuse avaldis on sellele järgnevate () sulgude vahel.
+            {               //  Järgneb {} loogeliste sulgude vahel koodiplokk, mis teostatakse siis, kui tingimuse avaldis annab tulemusena "true",
+                            //  "false" tulemuse puhul jäetakse kood vahele
+            }
+            else if (true)  //  Kaitstud sõnad "else" ja "if" (koos "else if") kutsuvad esile sekundaarse tingimuslause, mille tingimus on samamoodi
+                            //  sellele järgnevate sulgude vahel, ning millele peab alati eelnema kas "if" või teine "else if". Else if tingimust
+                            //  kontrollitakse ainult siis, kui sellele eelnev tingimus tagastab avaldise tulemusena "false".
+            {               //  Järgneb {} loogeliste sulgude vahel koodiplokk, mis teostatakse siis, kui else if tingimuslause avaldis annab tulemusena "true",
+                            //  "false" tulemuse puhul jäetakse kood vahele ning minnakse edasi järgneva tingimuse või teostatava koodi juurde.
+            }
+            else            //  Kaitstud sõna "else" kutsub esile järeltingimuslause, millele peab eelnema alati kas "if" või "else if" tingimuslause, ning
+            {               //  mille koodiploki sisu täidetakse ilma oma tingimuse avaldise kontrollita (ei oma avaldist) kuna else koodiplokk teostatakse
+                            //  kõikide teiste tingimuste läbikukkumisel (kõik eelnevad tagastavad tulemusena "false")
+            }
         }
     }
 }
