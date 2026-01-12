@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1062" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="576" dy="879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -57,7 +57,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="F03nRizAO4-kaosCNSs3-12" value="Kuva kasutajale tekst: &lt;br&gt;&quot;Ajarändureid me ei teeninda&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="480" y="570" width="200" height="60" as="geometry" />
+          <mxGeometry x="520" y="570" width="200" height="60" as="geometry" />
         </mxCell>
         <mxCell id="F03nRizAO4-kaosCNSs3-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-16" target="F03nRizAO4-kaosCNSs3-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -67,8 +67,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="T1qJkAO5i6RlmFpipgkX-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-16" target="T1qJkAO5i6RlmFpipgkX-9">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="T1qJkAO5i6RlmFpipgkX-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="F03nRizAO4-kaosCNSs3-16" target="F03nRizAO4-kaosCNSs3-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="710" />
+              <mxPoint x="510" y="600" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="T1qJkAO5i6RlmFpipgkX-44" value="EI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="T1qJkAO5i6RlmFpipgkX-43">
           <mxGeometry x="-0.8554" y="1" relative="1" as="geometry">
