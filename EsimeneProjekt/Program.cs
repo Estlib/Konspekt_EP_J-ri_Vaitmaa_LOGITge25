@@ -133,37 +133,59 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             kui aga mõlemad nimed on olemas, siis tagasta kasutajale tema ees ja perekonnanimega tervitus. ✅
             */
 
-            Console.WriteLine("Palun sisesta oma vanus, kirjuta täisarvuna: ");
-            int isikuVanus = 0;
-            isikuVanus = int.Parse(Console.ReadLine());
-            if (isikuVanus <= 0)
-            {
-                Console.WriteLine("Ajarändureid me ei teeninda");
-            }
-            else if (isikuVanus > 0 && isikuVanus < 18)
-            {
-                Console.WriteLine("Palun sisesta oma nimi:");
-                string kasutajaNimi = "";
-                kasutajaNimi = Console.ReadLine();
-                Console.WriteLine($"Kallis {kasutajaNimi}, palun kutsu siia oma lapsevanem.");
-            }
-            else
-            {
-                Console.WriteLine("Palun kirjuta siia oma Eesnimi:");
-                string eesNimi = "";
-                eesNimi = Console.ReadLine();
-                Console.WriteLine("Palun kirjuta siia ka oma Perekonnanimi:");
-                string perekonnaNimi = "";
-                perekonnaNimi = Console.ReadLine();
-                if(eesNimi == "" || perekonnaNimi == "")
-                {
-                    Console.WriteLine("Sisestama pidi mõlemad nimed >:C");
-                }
-                else
-                {
-                    Console.WriteLine($"Tere päevast {eesNimi} {perekonnaNimi}!");
-                }
-            }
+            //Console.WriteLine("Palun sisesta oma vanus, kirjuta täisarvuna: ");
+            //int isikuVanus = 0;
+            //isikuVanus = int.Parse(Console.ReadLine());
+            //if (isikuVanus <= 0)
+            //{
+            //    Console.WriteLine("Ajarändureid me ei teeninda");
+            //}
+            //else if (isikuVanus > 0 && isikuVanus < 18)
+            //{
+            //    Console.WriteLine("Palun sisesta oma nimi:");
+            //    string kasutajaNimi = "";
+            //    kasutajaNimi = Console.ReadLine();
+            //    Console.WriteLine($"Kallis {kasutajaNimi}, palun kutsu siia oma lapsevanem.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Palun kirjuta siia oma Eesnimi:");
+            //    string eesNimi = "";
+            //    eesNimi = Console.ReadLine();
+            //    Console.WriteLine("Palun kirjuta siia ka oma Perekonnanimi:");
+            //    string perekonnaNimi = "";
+            //    perekonnaNimi = Console.ReadLine();
+            //    if(eesNimi == "" || perekonnaNimi == "")
+            //    {
+            //        Console.WriteLine("Sisestama pidi mõlemad nimed >:C");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"Tere päevast {eesNimi} {perekonnaNimi}!");
+            //    }
+            //}
+
+            //castimise näide
+            int minuArv = 9001;
+            Console.WriteLine(minuArv);
+            double minuDouble = minuArv;
+            Console.WriteLine(minuDouble);
+
+            double minuUusDouble = 6.7;
+            Console.WriteLine(minuUusDouble);
+            int minuUusArv = (int)minuUusDouble;
+            Console.WriteLine(minuUusArv);
+
+            double newData1 = 1.23d;
+            float newFloat1 = (float)newData1;
+            long newLong1 = (long)newFloat1;
+            int newInt1 = (int)newLong1;
+            char newChar1 = (char)newInt1;
+
+            int backToInt = newChar1;
+            long backToLong = backToInt;
+            float backToFloat = backToLong;
+            double backToDouble = backToFloat;
 
             /*
                 üleval harjutused
@@ -171,7 +193,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 https://meet.google.com/qjt-wofj-gdb
 
                 all teooria
-                */
+            */
             ///*   -= S Ü N T A K S =-                             */
             Console.WriteLine("'Ommik"); //<- "1"
             string vastus = Console.ReadLine(); //<- "2"
@@ -191,6 +213,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             // //        - Tähistab üherealist kommentaari
             // /**/      - Tähistab plokk-kommentaari, kõik tärnide vbahel olev on välja kommenteeritud
             // ///       - Funktsiooni summary kommentaar, kirjeldab meetodeid mille tekst kuvatakse välja tooltipina
+            //       - Taane - aitab arendajal aru saada, kuskohas millise koodiploki sees kood parasjagu asub, ning aitab järge pidada
 
             ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
             //string tekst = "mingisugune inimloetav tekstike"; //tekst
@@ -231,7 +254,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             muutuja %= 2;
 
             // ++   -> on kiirtehe, mis muutujale liidab ainult ühe juurde.
-            muutuja++; 
+            muutuja++;
             // --   -> on kiirtehe, mis muutujast lahutab ainult ühe maha.
             muutuja--;
 
@@ -273,6 +296,29 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             {               //  mille koodiploki sisu täidetakse ilma oma tingimuse avaldise kontrollita (ei oma avaldist) kuna else koodiplokk teostatakse
                             //  kõikide teiste tingimuste läbikukkumisel (kõik eelnevad tagastavad tulemusena "false")
             }
+            /*   -= T E I S E N D A M I N E / C A S T I M I N E =-  */
+
+            // Castmine on arvu teisendamine ühest andmetüübist teise. Castimist on kahte eri liiki, Automaatne (Implicit) ja manuaalne (Explicit)
+            //Automaatne castimine toimub siis, kui teisendatakse väiksemast andmetüübist suuremasse, sellisel juhul prrogrammeerija spetsiifiliselt
+            //castima ei pea.
+            //Manuaalne castimine toimub siis, kui teisendatakse suuremast andmetüübist väiksemasse, sellisel juhul on vaja suurema andmetüübiga
+            //muutuja ette, asetada sulupaar kus on soovitav andmetüüp sees.
+
+            // Manuaalne castimine (Explicit)
+            double newData2 = 1.23d; //tekitatakse, või on olemas doubletüüpi andmed muutujas newData2
+            float newFloat2 = (float)newData2; //Toimub teisendus väiksemasse float andmetüüpi, double andmetüübist.
+            long newLong2 = (long)newFloat2; //Toimub teisendus väiksemasse long andmetüüpi, float andmetüübist.
+            int newInt2 = (int)newLong2; //Toimub teisendus väiksemasse int andmetüüpi, long andmetüübist.
+            char newChar2 = (char)newInt2; //Toimub teisendus väiksemasse char andmetüüpi, int andmetüübist.
+
+            //Autmaatne castimine (Implicit)
+            int backToInt2 = newChar2; //Toimub automaatne teisendus char andmetüübist int andmetüüpi.
+            long backToLong2 = backToInt2; //Toimub automaatne teisendus int andmetüübist long andmetüüpi.
+            float backToFloat2 = backToLong2; //Toimub automaatne teisendus long andmetüübist float andmetüüpi.
+            double backToDouble2 = backToFloat2;  //Toimub automaatne teisendus float andmetüübist double andmetüüpi.
+
+            // Suuremast väiksemasse teisendus kaotab andmeresolutsiooni,
+            // kaotatud andmeid ei saa tagasi suuremasse andmetüüpi castimisega tagasi
         }
     }
 }
