@@ -165,37 +165,135 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //    }
             //}
 
-            //castimise näide
-            int minuArv = 9001;
-            Console.WriteLine(minuArv);
-            double minuDouble = minuArv;
-            Console.WriteLine(minuDouble);
+            ////castimise näide
+            //int minuArv = 9001;
+            //Console.WriteLine(minuArv);
+            //double minuDouble = minuArv;
+            //Console.WriteLine(minuDouble);
 
-            double minuUusDouble = 6.7;
-            Console.WriteLine(minuUusDouble);
-            int minuUusArv = (int)minuUusDouble;
-            Console.WriteLine(minuUusArv);
+            //double minuUusDouble = 6.7;
+            //Console.WriteLine(minuUusDouble);
+            //int minuUusArv = (int)minuUusDouble;
+            //Console.WriteLine(minuUusArv);
 
-            double newData1 = 1.23d;
-            float newFloat1 = (float)newData1;
-            long newLong1 = (long)newFloat1;
-            int newInt1 = (int)newLong1;
-            char newChar1 = (char)newInt1;
+            //double newData1 = 1.23d;
+            //float newFloat1 = (float)newData1;
+            //long newLong1 = (long)newFloat1;
+            //int newInt1 = (int)newLong1;
+            //char newChar1 = (char)newInt1;
 
-            int backToInt = newChar1;
-            long backToLong = backToInt;
-            float backToFloat = backToLong;
-            double backToDouble = backToFloat;
+            //int backToInt = newChar1;
+            //long backToLong = backToInt;
+            //float backToFloat = backToLong;
+            //double backToDouble = backToFloat;
 
-            /*
-                üleval harjutused
+            /*näiteülesanne 7 - "Kalkulaator" */
 
-                https://meet.google.com/qjt-wofj-gdb
+            //Console.WriteLine("Palun sisesta esimene arv");
+            //float arv1 = 0.0f;
+            //arv1 = float.Parse(Console.ReadLine());
 
-                all teooria
-            */
-            ///*   -= S Ü N T A K S =-                             */
-            Console.WriteLine("'Ommik"); //<- "1"
+            //Console.WriteLine("Palun sisesta teine arv");
+            //float arv2 = 0.0f;
+            //arv2 = float.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Mis tüüpi tehet sa teha tahad? (valik: + - * / ^ V)");
+            //string tehteTüüp = "";
+            //tehteTüüp = Console.ReadLine();
+
+            //double tehteTulemus = 0.0d;
+
+            //if (tehteTüüp != "")
+            //{
+            //    switch (tehteTüüp)
+            //    {
+            //        default:
+            //            Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+            //            break;
+            //        case "+":
+            //            tehteTulemus = arv1 + arv2;
+            //            break;
+            //        case "-":
+            //            tehteTulemus = arv1 - arv2;
+            //            break;
+            //        case "/":
+            //            tehteTulemus = arv1 / arv2;
+            //            break;
+            //        case "*":
+            //            tehteTulemus = arv1 * arv2;
+            //            break;
+            //        case "^":
+            //            tehteTulemus = Math.Pow(arv1, arv2);
+            //            break;
+            //        case "V":
+            //            tehteTulemus = Math.Pow(arv1, (1 / arv2));
+            //            break;
+            //    }
+            //    Console.WriteLine($"Tehte tulemus on: {arv1} {tehteTüüp} {arv2} = {tehteTulemus}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+            //}
+
+            /* näiteülesanne 7.1 - asenda switchcase if-elseif-elseiga*/
+            Console.WriteLine("Palun sisesta esimene arv");
+            float arv1 = 0.0f;
+            arv1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Palun sisesta teine arv");
+            float arv2 = 0.0f;
+            arv2 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Mis tüüpi tehet sa teha tahad? (valik: + - * / ^ V)");
+            string tehteTüüp = "";
+            tehteTüüp = Console.ReadLine();
+
+            double tehteTulemus = 0.0d;
+
+            if (tehteTüüp != "")
+            {
+                switch (tehteTüüp)
+                {
+                    default:
+                        Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+                        return;
+                    case "+":
+                        tehteTulemus = arv1 + arv2;
+                        break;
+                    case "-":
+                        tehteTulemus = arv1 - arv2;
+                        break;
+                    case "/":
+                        tehteTulemus = arv1 / arv2;
+                        break;
+                    case "*":
+                        tehteTulemus = arv1 * arv2;
+                        break;
+                    case "^":
+                        tehteTulemus = Math.Pow(arv1, arv2);
+                        break;
+                    case "V":
+                        tehteTulemus = Math.Pow(arv1, (1 / arv2));
+                        break;
+                }
+                Console.WriteLine($"Tehte tulemus on: {arv1} {tehteTüüp} {arv2} = {tehteTulemus}");
+            }
+            else
+            {
+                Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+            }
+
+
+                /*
+                    üleval harjutused
+
+                    https://meet.google.com/qjt-wofj-gdb
+
+                    all teooria
+                */
+                ///*   -= S Ü N T A K S =-                             */
+                Console.WriteLine("'Ommik"); //<- "1"
             string vastus = Console.ReadLine(); //<- "2"
             Console.WriteLine("C:");
             // ;         - Iga koodilause koodiploki sees lõppeb lauselõpumärgiga
