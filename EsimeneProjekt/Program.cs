@@ -188,6 +188,9 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             // "string"  - andmetüüp mis kirjutatakse alat muutuja ette. andmetüübis endas asuvad ka andmetüübile vajalikud funktsioonid.
             // "vastus"  - muutuja, mille nimi on "vastus" mis omab string-tüüpi andmeid mis omistatakse sinna sisse omistusoperaatoriga
             // ReadLine  - Funktsioon mida reas "2" kasutatakse. ReadLine loeb käsurea pealt väikeväärtusena sõne-tüüpi andmeid.
+            // //        - Tähistab üherealist kommentaari
+            // /**/      - Tähistab plokk-kommentaari, kõik tärnide vbahel olev on välja kommenteeritud
+            // ///       - Funktsiooni summary kommentaar, kirjeldab meetodeid mille tekst kuvatakse välja tooltipina
 
             ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
             //string tekst = "mingisugune inimloetav tekstike"; //tekst
