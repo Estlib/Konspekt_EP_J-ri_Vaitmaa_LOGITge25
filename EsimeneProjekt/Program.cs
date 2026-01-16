@@ -1,8 +1,13 @@
-﻿namespace EsimeneProjekt
+﻿using System; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
+//süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
+//failist.
+
+namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "EsimeneProjekt"
 {
-    internal class Program
+    internal class Program //<-- programmi klass, mis on ka omakorda konteiner tüüp, Kus sees on kogu programmi kood 
     {
-        static void Main(string[] args)
+        static void Main(string[] args) //<-- "Main" on programmi sees olev meetod mis vaikeväärtusena alati käivitatakse, kui ei ole teist meetodit
+                                        //käivituseks määratud
         {
             /* näiteprogramm 1*/
             //int palk = 2345;
@@ -167,6 +172,22 @@
 
                 all teooria
                 */
+            ///*   -= S Ü N T A K S =-                             */
+            Console.WriteLine("'Ommik"); //<- "1"
+            string vastus = Console.ReadLine(); //<- "2"
+            Console.WriteLine("C:");
+            // ;         - Iga koodilause koodiploki sees lõppeb lauselõpumärgiga
+            // Console   - Console on windowsi süsteemi/C# käsurea adresseerimise pakett, millega saab erinevasid käsurea operatsioone teha
+            // .         - Kasutatakse adresseerimiseks et saada punktile eelnevast objektist mingisugune meetod funktsioon, mis kirjutatakse
+            //             pärast punkti, võib mõelda kui kaustasuunas olevat / släshi. Antud juhul adresseeritakse reas "1" Console tööriista.
+            // WriteLine - Funktsioon mida parasjagu kasutatakse. WriteLine kuvab käsureale teksti, või kaasaantud parameetreid.
+            // ()        - Sulupaar mis omab funktsiooni tööks vajalikku infot/parameetreid.
+            // {}        - tähistab koodiplokki konteineri jaoks.
+            // []        - tähistab massiivi.
+            // ""        - tähistavad sõne andmetüüpi andmeid. Andmed ise asuvad jutumärkide vahel
+            // "string"  - andmetüüp mis kirjutatakse alat muutuja ette. andmetüübis endas asuvad ka andmetüübile vajalikud funktsioonid.
+            // "vastus"  - muutuja, mille nimi on "vastus" mis omab string-tüüpi andmeid mis omistatakse sinna sisse omistusoperaatoriga
+            // ReadLine  - Funktsioon mida reas "2" kasutatakse. ReadLine loeb käsurea pealt väikeväärtusena sõne-tüüpi andmeid.
 
             ///*   -= L I H T A N D M E T Ü Ü B I D =-             */
             //string tekst = "mingisugune inimloetav tekstike"; //tekst
