@@ -212,6 +212,9 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                    // 2 - Seejärel kirjutatakse muutuja nimi mis väljendab andmed ja nende andmete eesmärki nimisõnana
                                    //     soovitatavalt kasutada muutujate nimetamisel camelCase stiili. esimene täht on väike, ülejäänud
                                    //     sõnad muutuja nimes algavad suure tähega.
+                                   // 3 - omistusoperaator mis annab muutujale andmed sisse
+                                   // 4 - andmed mida omistatakse
+                                   // 5 - lauselõpumärk
 
             /*   -= O M I S T U S O P E R A A T O R I D =-          */
             // =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
