@@ -285,15 +285,15 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             }
 
 
-                /*
-                    üleval harjutused
+            /*
+                üleval harjutused
 
-                    https://meet.google.com/qjt-wofj-gdb
+                https://meet.google.com/qjt-wofj-gdb
 
-                    all teooria
-                */
-                ///*   -= S Ü N T A K S =-                             */
-                Console.WriteLine("'Ommik"); //<- "1"
+                all teooria
+            */
+            ///*   -= S Ü N T A K S =-                             */
+            Console.WriteLine("'Ommik"); //<- "1"
             string vastus = Console.ReadLine(); //<- "2"
             Console.WriteLine("C:");
             // ;         - Iga koodilause koodiploki sees lõppeb lauselõpumärgiga
@@ -394,6 +394,30 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             {               //  mille koodiploki sisu täidetakse ilma oma tingimuse avaldise kontrollita (ei oma avaldist) kuna else koodiplokk teostatakse
                             //  kõikide teiste tingimuste läbikukkumisel (kõik eelnevad tagastavad tulemusena "false")
             }
+            /*   -= T I N G I M U S L A U S E - SWITCHCASE =-       */
+            int option = 3; // -------
+            switch (option) // "switch" on kaitstud sõna alternatiivse tingimuskontrolli jaoks mida saab if-elseif-else asemel kasutada. Sulgude vahele
+                            // käib muutuja nimi, mille põhjal tingiomuslik ümberlülitus toimub. Siin sulgude vahel ei ole tingimus ise, vaid kõigest
+                            // kontrollitav muutuja, või omakorda sulgude vahel muu tingimuse avaldis. Pärast lülitusvalikut tuleb koodiplokk {}
+            {
+                case 1:     // Koodiploki sees on erinevad juhtumid või vasted väärtuste korral mis võivad olla lülitusvalikus oleva muutuja sees.
+                            // Iga juhtum/vaste kirjutatakse kaitstud sõnaga "case" ning  väärtus selle järel millele see juhtum vastab. Antud juhul
+                            // see juhtum toimib, kui muutujas "option" on täisarv 1. Peale võimalikku väärtust on koolon väljendades juhtumi täitumisel
+                            // tehtavat programmikoodi.
+                    Console.WriteLine("Nope"); // Antud juhul kuvatakse juhtumi 1 puhul kasutajale sõnum.
+                    break;
+                case 2:     // Juhtumeid võib olla mitmeid, antud juhul on siin näidises neid 3+1 (3 kindlat väärtust ja üks vaikeväärtus)
+                    break;
+                case 3:
+                    Console.WriteLine(option); // Antud juhul kuvatakse juhtumi 3 puhul kasutajale muutujas "option" asuv väärtus välja
+                    break;
+                default:    // Default juhtum täitub siis, kui ülejäänud kirjeldatud juhtumid ei kata switchi lülitusvalikus olevas muutujas
+                            // asuvat väärtust. Toimib nagu else, kuid erinevalt if-elseif-else struktuurist võib default olla ka alguses.
+                    break;  // Kui antud juhtumi tegevus on tehtud, väljutakse mitte ainult juhtumist, vaid ka kogu käesolevast switch-case
+                            // tingimustikust. Peale breaki on lauselõpumärk.
+            }
+
+
             /*   -= T E I S E N D A M I N E / C A S T I M I N E =-  */
 
             // Castmine on arvu teisendamine ühest andmetüübist teise. Castimist on kahte eri liiki, Automaatne (Implicit) ja manuaalne (Explicit)
