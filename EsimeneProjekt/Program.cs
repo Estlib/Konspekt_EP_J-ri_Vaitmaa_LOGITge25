@@ -337,6 +337,24 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
 
+            /*   -= K A I T S T U D   S Õ N A D =-                  */
+            //
+            // Kaitstud sõnad on kindlad nimisõnad/tyegusõnad mida C# kasutab oma koodistruktuuride tähistamiseks
+            // Et ära hoida keerukat näpuga jälje ajamist, ning kompilaatori töö lihtsustamist, ei saa järgnevaid sõnu
+            // muutuja nimetusel kasutada, nendeks on:
+            //
+            // abstract     as          base        bool        break       byte        case
+            // catch        char        checked     class       count       continue    decimal
+            // default      delegate    do          double      else        enum        event
+            // explicit     extern      false       finally     fixed       float       for
+            // foreach      goto        if          implicit    in          int         interface
+            // internal     is          lock        long        namespace   new         null
+            // object       operator    out         override    params      private     protected
+            // public       readonly    ref         return      sbyte       sealed      short
+            // sizeof       stackalloc  static      string      struct      switch      this
+            // throw        true        try         typeof      uint        ulong       unchecked   
+            // unsafe       ushort      using       virtual     void        volatile    while
+
             /*   -= O M I S T U S O P E R A A T O R I D =-          */
             // =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
             int muutuja = 1;
