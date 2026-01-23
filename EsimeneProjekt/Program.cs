@@ -236,64 +236,94 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //    Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
             //}
 
-            /* näiteülesanne 7.1 - asenda switchcase if-elseif-elseiga*/
-            Console.WriteLine("Palun sisesta esimene arv");
-            float arv1 = 0.0f;
-            arv1 = float.Parse(Console.ReadLine());
+            ///* näiteülesanne 7.1 - asenda switchcase if-elseif-elseiga*/
+            //Console.WriteLine("Palun sisesta esimene arv");
+            //float arv1 = 0.0f;
+            //arv1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Palun sisesta teine arv");
-            float arv2 = 0.0f;
-            arv2 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisesta teine arv");
+            //float arv2 = 0.0f;
+            //arv2 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Mis tüüpi tehet sa teha tahad? (valik: + - * / ^ V)");
-            string tehteTüüp = "";
-            tehteTüüp = Console.ReadLine();
+            //Console.WriteLine("Mis tüüpi tehet sa teha tahad? (valik: + - * / ^ V)");
+            //string tehteTüüp = "";
+            //tehteTüüp = Console.ReadLine();
 
-            double tehteTulemus = 0.0d;
+            //double tehteTulemus = 0.0d;
 
-            if (tehteTüüp != "")
+            //if (tehteTüüp != "")
+            //{
+            //    switch (tehteTüüp)
+            //    {
+            //        default:
+            //            Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+            //            return;
+            //        case "+":
+            //            tehteTulemus = arv1 + arv2;
+            //            break;
+            //        case "-":
+            //            tehteTulemus = arv1 - arv2;
+            //            break;
+            //        case "/":
+            //            tehteTulemus = arv1 / arv2;
+            //            break;
+            //        case "*":
+            //            tehteTulemus = arv1 * arv2;
+            //            break;
+            //        case "^":
+            //            tehteTulemus = Math.Pow(arv1, arv2);
+            //            break;
+            //        case "V":
+            //            tehteTulemus = Math.Pow(arv1, (1 / arv2));
+            //            break;
+            //    }
+            //    Console.WriteLine($"Tehte tulemus on: {arv1} {tehteTüüp} {arv2} = {tehteTulemus}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+            //}
+            /* näiteülesanne 8 */
+            //kirjuta programm mis
+            //küsib kasutajatelt pikkust *sentimeetrites* 
+            //küsib tema teiste perekonnaliikmete pikkust (ema isa vend)
+            // programm arvutab välja perekonna keskmise pikkuse, vanemate keskmise pikkuse, laste keskmise pikkuse ja kahe keskmise vahe,
+            // kõik arvud peab programm esitama komakohtadega arvudena
+            int kasutajapikkus = 0;
+            int vennapikkus = 0;
+            int emapikkus = 0;
+            int isapikkus = 0;
+            Console.WriteLine("Mis sinu pikkus sentimeetrites?: ");
+            kasutajapikkus = int.Parse(Console.ReadLine());
+            Console.WriteLine("Mis sinu venna pikkus sentimeetrites?: ");
+            vennapikkus = int.Parse(Console.ReadLine());
+            Console.WriteLine("Mis sinu ema pikkus sentimeetrites?: ");
+            emapikkus = int.Parse(Console.ReadLine());
+            Console.WriteLine("Mis sinu isa pikkus sentimeetrites?: ");
+            isapikkus = int.Parse(Console.ReadLine());
+            float perekeskmine = ((float)(kasutajapikkus+emapikkus+vennapikkus+isapikkus)/4)/100;
+            float lastekeskmine = ((float)(kasutajapikkus+vennapikkus)/2)/100;
+            float vanematekeskmine = ((float)(emapikkus+isapikkus)/2)/100;
+            float vahe = 0;
+            if (vanematekeskmine > lastekeskmine)
             {
-                switch (tehteTüüp)
-                {
-                    default:
-                        Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
-                        return;
-                    case "+":
-                        tehteTulemus = arv1 + arv2;
-                        break;
-                    case "-":
-                        tehteTulemus = arv1 - arv2;
-                        break;
-                    case "/":
-                        tehteTulemus = arv1 / arv2;
-                        break;
-                    case "*":
-                        tehteTulemus = arv1 * arv2;
-                        break;
-                    case "^":
-                        tehteTulemus = Math.Pow(arv1, arv2);
-                        break;
-                    case "V":
-                        tehteTulemus = Math.Pow(arv1, (1 / arv2));
-                        break;
-                }
-                Console.WriteLine($"Tehte tulemus on: {arv1} {tehteTüüp} {arv2} = {tehteTulemus}");
+                vahe = vanematekeskmine - lastekeskmine;
             }
             else
             {
-                Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+                vahe = lastekeskmine - vanematekeskmine;
             }
+            Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+Math.Round(vanematekeskmine,2)+"m.\nlastekeksmine on "+Math.Round(lastekeskmine,2)+"m. kahe keskmise vahe on "+Math.Round(vahe,2)+"m.");
 
+                /*
+                    üleval harjutused
 
-            /*
-                üleval harjutused
+                    https://meet.google.com/qjt-wofj-gdb
 
-                https://meet.google.com/qjt-wofj-gdb
-
-                all teooria
-            */
-            ///*   -= S Ü N T A K S =-                             */
-            Console.WriteLine("'Ommik"); //<- "1"
+                    all teooria
+                */
+                ///*   -= S Ü N T A K S =-                             */
+                Console.WriteLine("'Ommik"); //<- "1"
             string vastus = Console.ReadLine(); //<- "2"
             Console.WriteLine("C:");
             // ;         - Iga koodilause koodiploki sees lõppeb lauselõpumärgiga
