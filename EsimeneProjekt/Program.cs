@@ -289,21 +289,49 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //küsib tema teiste perekonnaliikmete pikkust (ema isa vend)
             // programm arvutab välja perekonna keskmise pikkuse, vanemate keskmise pikkuse, laste keskmise pikkuse ja kahe keskmise vahe,
             // kõik arvud peab programm esitama komakohtadega arvudena
-            int kasutajapikkus = 0;
-            int vennapikkus = 0;
-            int emapikkus = 0;
-            int isapikkus = 0;
-            Console.WriteLine("Mis sinu pikkus sentimeetrites?: ");
-            kasutajapikkus = int.Parse(Console.ReadLine());
-            Console.WriteLine("Mis sinu venna pikkus sentimeetrites?: ");
-            vennapikkus = int.Parse(Console.ReadLine());
-            Console.WriteLine("Mis sinu ema pikkus sentimeetrites?: ");
-            emapikkus = int.Parse(Console.ReadLine());
-            Console.WriteLine("Mis sinu isa pikkus sentimeetrites?: ");
-            isapikkus = int.Parse(Console.ReadLine());
-            float perekeskmine = ((float)(kasutajapikkus+emapikkus+vennapikkus+isapikkus)/4)/100;
-            float lastekeskmine = ((float)(kasutajapikkus+vennapikkus)/2)/100;
-            float vanematekeskmine = ((float)(emapikkus+isapikkus)/2)/100;
+            //int kasutajapikkus = 0;
+            //int vennapikkus = 0;
+            //int emapikkus = 0;
+            //int isapikkus = 0;
+            //Console.WriteLine("Mis sinu pikkus sentimeetrites?: ");
+            //kasutajapikkus = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Mis sinu venna pikkus sentimeetrites?: ");
+            //vennapikkus = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Mis sinu ema pikkus sentimeetrites?: ");
+            //emapikkus = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Mis sinu isa pikkus sentimeetrites?: ");
+            //isapikkus = int.Parse(Console.ReadLine());
+            //float perekeskmine = ((float)(kasutajapikkus+emapikkus+vennapikkus+isapikkus)/4)/100;
+            //float lastekeskmine = ((float)(kasutajapikkus+vennapikkus)/2)/100;
+            //float vanematekeskmine = ((float)(emapikkus+isapikkus)/2)/100;
+            //float vahe = 0;
+            //if (vanematekeskmine > lastekeskmine)
+            //{
+            //    vahe = vanematekeskmine - lastekeskmine;
+            //}
+            //else
+            //{
+            //    vahe = lastekeskmine - vanematekeskmine;
+            //}
+            //Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+Math.Round(vanematekeskmine,2)+"m.\nlastekeksmine on "+Math.Round(lastekeskmine,2)+"m. kahe keskmise vahe on "+Math.Round(vahe,2)+"m.");
+
+
+            List<int> vanused = new List<int>();
+            List<string> isikud = new List<string>() {"sinu", "oma venna", "oma isa", "oma ema"};
+            int i = 0;
+            do
+            {
+                Console.WriteLine("Sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
+                //kuvame kasutajale teate, koos isikuga mida adresseeritakse tsüklimuutuja abil järjendist "isikud"
+                vanused.Add(int.Parse(Console.ReadLine()));
+                //.Add on listi meetod elemendi lisamiseks, lisatakse otse parsitud täisarv käsurea pealt
+                i++;
+                // suurendame i-d ühe võrra
+            } while (i < isikud.Count);
+
+            float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(3) + vanused.ElementAt(1) + vanused.ElementAt(2)) / 4) / 100;
+            float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
+            float vanematekeskmine = ((float)(vanused.ElementAt(3) + vanused.ElementAt(2)) / 2) / 100;
             float vahe = 0;
             if (vanematekeskmine > lastekeskmine)
             {
@@ -313,17 +341,17 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             {
                 vahe = lastekeskmine - vanematekeskmine;
             }
-            Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+Math.Round(vanematekeskmine,2)+"m.\nlastekeksmine on "+Math.Round(lastekeskmine,2)+"m. kahe keskmise vahe on "+Math.Round(vahe,2)+"m.");
+            Console.WriteLine("perekeskmine on " + Math.Round(perekeskmine, 2) + "m. vanematekeskmine on " + Math.Round(vanematekeskmine, 2) + "m.\nlastekeksmine on " + Math.Round(lastekeskmine, 2) + "m. kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
 
-                /*
-                    üleval harjutused
+            /*
+                üleval harjutused
 
-                    https://meet.google.com/qjt-wofj-gdb
+                https://meet.google.com/qjt-wofj-gdb
 
-                    all teooria
-                */
-                ///*   -= S Ü N T A K S =-                             */
-                Console.WriteLine("'Ommik"); //<- "1"
+                all teooria
+            */
+            ///*   -= S Ü N T A K S =-                             */
+            Console.WriteLine("'Ommik"); //<- "1"
             string vastus = Console.ReadLine(); //<- "2"
             Console.WriteLine("C:");
             // ;         - Iga koodilause koodiploki sees lõppeb lauselõpumärgiga
