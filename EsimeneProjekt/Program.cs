@@ -316,32 +316,58 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+Math.Round(vanematekeskmine,2)+"m.\nlastekeksmine on "+Math.Round(lastekeskmine,2)+"m. kahe keskmise vahe on "+Math.Round(vahe,2)+"m.");
 
 
-            List<int> vanused = new List<int>();
-            List<string> isikud = new List<string>() {"sinu", "oma venna", "oma isa", "oma ema"};
-            int i = 0;
-            do
-            {
-                Console.WriteLine("Sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
-                //kuvame kasutajale teate, koos isikuga mida adresseeritakse tsüklimuutuja abil järjendist "isikud"
-                vanused.Add(int.Parse(Console.ReadLine()));
-                //.Add on listi meetod elemendi lisamiseks, lisatakse otse parsitud täisarv käsurea pealt
-                i++;
-                // suurendame i-d ühe võrra
-            } while (i < isikud.Count);
+            //List<int> vanused = new List<int>();
+            //List<string> isikud = new List<string>() {"sinu", "oma venna", "oma isa", "oma ema"};
+            //int i = 0;
+            //do
+            //{
+            //    Console.WriteLine("Sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
+            //    //kuvame kasutajale teate, koos isikuga mida adresseeritakse tsüklimuutuja abil järjendist "isikud"
+            //    vanused.Add(int.Parse(Console.ReadLine()));
+            //    //.Add on listi meetod elemendi lisamiseks, lisatakse otse parsitud täisarv käsurea pealt
+            //    i++;
+            //    // suurendame i-d ühe võrra
+            //} while (i < isikud.Count);
 
-            float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(3) + vanused.ElementAt(1) + vanused.ElementAt(2)) / 4) / 100;
-            float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
-            float vanematekeskmine = ((float)(vanused.ElementAt(3) + vanused.ElementAt(2)) / 2) / 100;
-            float vahe = 0;
-            if (vanematekeskmine > lastekeskmine)
+            //float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(3) + vanused.ElementAt(1) + vanused.ElementAt(2)) / 4) / 100;
+            //float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
+            //float vanematekeskmine = ((float)(vanused.ElementAt(3) + vanused.ElementAt(2)) / 2) / 100;
+            //float vahe = 0;
+            //if (vanematekeskmine > lastekeskmine)
+            //{
+            //    vahe = vanematekeskmine - lastekeskmine;
+            //}
+            //else
+            //{
+            //    vahe = lastekeskmine - vanematekeskmine;
+            //}
+            //Console.WriteLine("perekeskmine on " + Math.Round(perekeskmine, 2) + "m. vanematekeskmine on " + Math.Round(vanematekeskmine, 2) + "m.\nlastekeksmine on " + Math.Round(lastekeskmine, 2) + "m. kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
+
+            /* näiteülesanne 9 - sünoptiku sõnum*/
+
+            // kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust
+            // kui sünoptik on sisestused lõpetanud, kuva viis rida, mis kirjeldab viis päeva mõlema omadusega
+
+            Console.WriteLine("Tere sünoptik, ");
+            float[] temps = new float[5]; // temperatuuride massiiv
+            string[] kirjeldused = new string[5]; // kirjelduste massiiv
+            for (int i = 0; i < temps.Length; i++) //võtame sünoptikult temperatuuri andmed ükshaaval
             {
-                vahe = vanematekeskmine - lastekeskmine;
+                Console.WriteLine("esita palun järgmine temperatuur:");
+                temps[i] = float.Parse(Console.ReadLine());
             }
-            else
+            Console.WriteLine("Ole kirjelda ka eesolev nädal, ");
+            for (int i = 0; i < kirjeldused.Length; i++) //võtame sünoptikult päeva kirjelduse andmed ükshaaval
             {
-                vahe = lastekeskmine - vanematekeskmine;
+                Console.WriteLine("kirjelda "+(i+1)+". päeva:");
+                kirjeldused[i] = Console.ReadLine();
             }
-            Console.WriteLine("perekeskmine on " + Math.Round(perekeskmine, 2) + "m. vanematekeskmine on " + Math.Round(vanematekeskmine, 2) + "m.\nlastekeksmine on " + Math.Round(lastekeskmine, 2) + "m. kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
+            Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
+            for (int i = 0; i < temps.Length; i++)
+            {
+                Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
+            } 
+
 
             /*
                 üleval harjutused
