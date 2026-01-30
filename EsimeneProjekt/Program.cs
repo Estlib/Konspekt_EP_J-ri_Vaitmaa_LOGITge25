@@ -382,6 +382,31 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //var y = "ABC";
             //bool jahvõiei = false; //kas true või false.
 
+            ///*   -= K O M P O S I I T A N D M E T Ü Ü B I D =-   */
+            //1. Massiiv
+
+            /* 1 - MASSIIV */
+            // []       -> Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. Massiivi tähistatakse kantsulgudega.
+            //          Massiive saab olla ükskõik millist lihtandmetüüpi massiive, massiivi tekitamisel peab ära ütlema kui pikk või kui suur
+            //          vastav massiiv on. Kuigi massiivis saab olla lihtandmetüübid, saab massiive moodustada ka teistest massiividest ja muudest
+            //          komposiitandmetüüpidest. Kui on moodustatud massiiv mis koosneb teistest massiividest on tegu mitmedimensioonilise massiiviga.
+            //          Näiteks on 2D maasiiv selline massiiv kus on sees omakorda veel kaks lihtandmetüübist koosnevat massiivi, näiteks float.
+            // Esimene tekitusviis:
+            int[] uusMassiiv = new int[3];  //andmetüüp int väljendaB, et tegu on täisarvutüüpi andmega, mis on massiiv, ja omab endas täisarve
+                                            //muutuja nimi on "uusMassiiv" ning võrdusmärgi taga omistatakse sinna massiiv kolme elemendiga,
+                                            //kus mitte ükski elemend hetkel veel väärtust ei oma. Kui mitu elementi väljendatakse kantsulgude vahel,
+                                            //peale andmetüüpi ja peale kaitstud sõna "new". New ütleb, et tegu on uue väärtusega selle muutuja sees.
+            // Teine tekitusviis:
+            int[] uusMassiiv2 = [1, 2, 3];  //Teine massiivi tekitusviis kus massiivi pikkuse sätestamise asemel antakse muutujasse kohe kindlate
+                                            //väärtustega elemendid kaasa. Massiivi pikkust sätestama ei pea, kuna see tuletatakse sisestatud
+                                            //elementide arvust.
+
+            // - - Massiivi sisemised meetodid - -
+            int kuiPaljuOn = uusMassiiv.Length;     //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
+                                                    //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
+                                                    //väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, sest poolikuid või osalisi
+                                                    //elemente ei ole olemas.
+
             ///* Muutuja nime näide: */
             ////string string = "abc"; //is bäd
             //string sõne = "abc"; //is gud
@@ -569,6 +594,45 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                     //ehk tingimuse avaldise tulemus on "true" täidetakse veel üks ring, ning kontrollitakse
                                                     //tingimust uuesti. antud juhul tsükkel toimib niikaua, kuni tsüklimuutuja ei ole 5, ta saab
                                                     //olla 4, ja 6 ja ükskõik mis muu, aga mitte 5.
+
+            /*   -= T S Ü K L I D    WHILE =-                        */
+
+            // While tsükkel on kõioge tüüpilisemat laadi tsükkel, tal on tingimusekontroll esimese ringi algauses, kuid tsükkel ei oma sisseehitatud
+            // tsüklimuutujat, selle peab sätestama programmeerija
+            string tsükliMuutuja2 = "";             //Mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikku väärtust
+                                                    //ehk tsüklimuutuja
+            while (tsükliMuutuja2 != "0")           //"while" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev
+                                                    //tingimusekontroll, kus kontrollitakse tsüklimuutuja hetkeseisu, ning kui avaldis tagastab "true"
+                                                    //tsükkel töötab veel ühe ringi, kui tingimus ei täitu, siis ei täideta ka järgnevat ringi, ning
+                                                    //tsükli töö katkeb. Antud juhul kontrollitakse, et tsüklimuutuja ei oleks võrdne sõnega kus on
+                                                    //tähemärk arvu 0 jaoks.
+            {                  
+                Console.WriteLine("esita tekst:");  //Koodiploki "{}" sees olev tegevus, antud juhul küsitakse kasutajalt teksti esitust
+                tsükliMuutuja2 = Console.ReadLine();//mis seejärel omistatakse tsüklimuutuja enda sisse.
+            }
+
+            /*   -= T S Ü K L I D    FOR =-                          */
+
+            //For tsükkel, võrreldes dowhile või while tsükliga omab endas tsükli töö edasiviimiseks tsükli enda sätestuse sees, peale tingimusekontrolli
+            //ka iseenda tsüklimuutujat, ning selle iseenda tsüklimuutuja muutmist. Tal on olemas kõik vajalik, et teha oma tööd autonoomsemalt kui while
+            //või dowhile tsüklil.
+
+            int[] arvuMassiiv = new int[5];             //Muutuja, kus on andmed, mida tsükkel läbi töötleb.
+            for (int k = 0; k < arvuMassiiv.Length; k++)//Kaitstud sõna "for" alustab for tsüklit, pärast mida on sulud, mille vahel on kõik tsükli töö
+                                                        //jaoks vajalik. Esimene parfameeter tekitab tsükli töö jaoks kohaliku muutuja - tsüklimuutuja
+                                                        //ei eksisteeri väljaspool tsükli enda konteksti. Selles sätestuses on kohalik muutuja "int k = 0;".
+                                                        //Teine parameeter on tsükli töö kontrollimiseks vajalik tingimusekontroll. Samamoodi nagu while või
+                                                        //dowhile juures, tingimuse täitumisel ("true") tsükkel teeb ühe ringi, mittetäitumisel tsükli töö
+                                                        //katkeb. Kolmas parameeter on tsüklimuutuja muutmine, selles näites seda kiirtehtega ++ seda
+                                                        //inkrementeeritakse. On võimalik ka muud for sulgude vahelised operatsiooni konfiguratsioonid.
+                                                        //Iga for tsükli parameeter on tegelikult oma täielik koodilause. Seega, eraldatakse sulgude vahel
+                                                        //lauselõpumärgiga välja arvatud viimane, viimase lõpetab sulg.
+                                                        //Sulgudele järgneb koodiplokk {}
+            {
+                Console.WriteLine("sisesta "+k+". arv");//Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt
+                                                        //järgmist/mingindat arvu.
+                arvuMassiiv[k] = int.Parse(Console.ReadLine());//Kasutades tsüklimuutujat, täidetakse massiiv.
+            }
         }
     }
 }
