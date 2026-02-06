@@ -368,6 +368,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //    Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
             //} 
 
+            /* näiteülesanne 10 - graafik*/
             // andmed mida graafikuna kujutada tahetakse
             List<float> graphData = new List<float>()
             {
