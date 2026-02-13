@@ -557,6 +557,34 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             sõnastik.ContainsValue("tikker");   //.ContainsValue() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina
                                                 //kaasa antud väärtuse.
 
+            /* 4 - MITMIK/HULK  */
+            // Andmetüübi kirjeldus "Tuple<>" näitab et siin on tegu erinevate andmete hulgaga ehk mitmikuga. Tuple noolsulgude vahele asetatakse kõik soovitud
+            // vajadusel erinevad andmetüübid mis väljendavad tupli sees väljenduvate andmete asukohtade andmetüüpe. Kui esimene andmetüüp on string, siis
+            // Tuple esimene objekt on string tüüpi andmed, kui teine andmetüüp on List<int[]> hoitakse teises objektis loendeid mille sees on massiivid
+            // täisarvudega. Just nagu kõik teised komposiitandmetüübid, võtab ka Tuple vastu kõiki andmetüüpe, kaasaarvatud iseennast. Erinevalt teistest
+            // komposiitandmetüüpidest, ei saa ühte Tuple elementi kohapeal muuta, vaid kogu Tuple tuleb protsessi käigus rekombineerida muudetud andmetest
+            // ja olemasolevatest andmetest uuesti.
+            Tuple<string, string> piparmündiTupla = new Tuple<string, string>("vasak tupla", "parem tupla");
+
+            // Esimene tekitusviis:
+            Tuple<bool, int, string> someTuple = new Tuple<bool, int, string>( true, 1, "abc" );
+            //Andmetüüvbi kirjeldus "Tuple<>" ütleb et selles muutujas on mitmik. Selles mitmikus on esimeseks bool teiseks int ja kolmandaks string tüüpi
+            //objektid. Tuple vajab ka kohe esmast omistust, seega kaitstud sõna new ja andmetüübi täiskirjeldus "Tuple<bool, int, string>" vajab peale sead
+            //sulgude vahele esmaseid andmeid. Antud juhul on siin ( true, 1, "abc" );
+
+            //Tuple töötlemine:
+            // Ütleme et on olemas ülaltoodud piparmündiTupla. See on Tuple. Justnagu päris tupla, tahame sealt ühe ära süüa. ehk asendada ühe kahest objektist
+            // uue sõnega mis loeks "NJÄM NJÄM NJÄM".
+            //Tuplet ei saa muuta, aga seda saab rekombineerida, seega me saame teha nii:
+            string uuspool = "NJÄM NJÄM NJÄM";
+            piparmündiTupla = new Tuple<string, string>(piparmündiTupla.Item1,uuspool);
+
+            //Tuple adresseerimine:
+            // justnagu eelnevalt näidatud, me sasame adresseerida tuple erinevaid objekte siiski eraldi. Selle jaoks on iga tekitatud Tuple sees genereeritud
+            // muutujad ".Item#" millega me saame adresseerida soovitud objekti.
+            // NB! erinevalt loendist ja massiivist, algab lugemine arvust 1. ehk esimene Item ei ole Item0 vaid Item1.
+            string pool1 = piparmündiTupla.Item1; // siin asetame muutujasse "pool1" valitud tuplest esimese objekti, ning
+            string pool2 = piparmündiTupla.Item2; // seal asetame muutujasse "pool2" valitud tuplest teise objekti
 
 
 
