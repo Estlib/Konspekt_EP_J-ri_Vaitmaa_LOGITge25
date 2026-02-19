@@ -470,6 +470,109 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //var y = "ABC";
             //bool jahvõiei = false; //kas true või false.
 
+            ///*   -= S Õ N E T Ö Ö R I I S T A D =-               */
+            // Sõnetööriistad on tekstilise andme töötluseks tööriistad mis teevad kasutajale mingid tegevused ära, või tuvastavad midagi.
+            // Neid on vaja tihtipeale programmi sisendi standardiseerimiseks, ning kasutaja sisestusvigade vältimiseks.
+
+            /* Töötlevad meetodid */
+            string minuLause = "   täna hOMMIkul jõin ära terve ploki moNSterit, aga üles ei ärganud, tahan veel magada   ";
+            Console.WriteLine(minuLause.Length);                //Sõne tööriist .Length tagastab selle sõne pikkuse.
+            Console.WriteLine(minuLause.ToUpper());             //Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks
+            Console.WriteLine(minuLause.ToLower());             //Sõne meetod .ToLower() muudab sõnes olevad tähed väikesteks tähtedeks
+            string tuvastus = "Kas lauses on sõna 'monsterit'?:" + minuLause.ToLower().Contains("monsterit");
+                                                                //Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat
+            bool tuvastus2 = minuLause.StartsWith("täna");      //StartsWith tagastab true või false, olenevalt sellest kas objekt algab otsitavaga
+            bool tuvastus3 = minuLause.EndsWith("magada");      //EndsWith tagastab true või false, olenevalt sellest kas objekt lõppeb otsitavaga
+            Console.WriteLine(tuvastus);                
+            Console.WriteLine(minuLause.Trim());                //Trim eemaldab algusest ja lõpust tühjad tähed nagu space ja reavahetus
+            string[] lauseOsad = minuLause.Split(' ');          //Split() tükeldab sõne osadeks, selle tähemärgi pealt mis parameetriks seatud on
+            foreach (var osa in lauseOsad)
+            {
+                Console.WriteLine(osa);
+            }
+            bool isBig = false;
+            for (int i = 0; i < lauseOsad.Length; i++)
+            {
+                if (isBig == true)
+                {
+                    lauseOsad[i] = lauseOsad[i].ToUpper();
+                }
+                else
+                {
+                    lauseOsad[i] = lauseOsad[i].ToLower();
+                }
+                isBig = !isBig;
+            }
+
+            /* Konkatenatsiooni võimalused */
+            string töödeldudLause = string.Join(' ', lauseOsad);//.Join() liidab stringid kokku üheks lauseks, võttes parameetriks tähe char
+                                                                //ja liidetavad elemendid loendina.
+            Console.WriteLine(töödeldudLause);
+
+            // + on kahe stringi vahel konkateneerimisoperatsioon, mitte matemaatiline tehe, ning liidab eelmise stringi lõppu järgmise
+            // stringi tema algusest et neid kahte ühendada
+            List<string> menüü = new List<string>() {"kiluvõileib","vastlakukkel","hernesupp" };
+            string väljundLause = "Need on meie menüüs: ";
+            foreach (var söök in menüü)
+            {
+                väljundLause += " "+söök+",";
+            }
+            Console.WriteLine(väljundLause);
+
+            //.ConCat() on spetsiifiline meetod, millega saab mitu string-tüüpi parameetrit ühendada üheks stringiks.
+            string eesnimi = "Julius";
+            string perekonnanimi = "Caesar";
+            string amet = "noahoidik";
+            string kuulusKeiser = string.Concat(eesnimi, perekonnanimi, amet);
+            Console.WriteLine(kuulusKeiser);
+
+            //"$" dollarimärk on viis kuidas keset stringi kasutada muutujates olevaid väärtusi, ilma nende tahtliku teisenduseta. Ehk tegu on
+            //formateeritud stringiga
+            string kuulusKeiser2 = $"{eesnimi} {perekonnanimi} oli maailma kuulsaim {amet}";
+            Console.WriteLine(kuulusKeiser2);
+
+            /* Escape character teksti vormindamiseks \ */
+            Console.WriteLine("A \n B");                    // \n tekitab sõnes reavahetuse
+            Console.WriteLine(" \\ ");                      // \\ kuvab teksti sisse "\"
+            Console.WriteLine("1\t2");                      // \t tekitab teksti vahele TAB operatsiooni, ehk neli/kaheksa vahet korraga
+            Console.WriteLine("AaF\ba");                    // \b kustutab \ble eelneva tähe kui \b on keset sõne.
+            Console.WriteLine(" \" ");                      // \" kuvab teksti sisse '"'
+            Console.WriteLine(" \' ");                      // \" kuvab teksti sisse "'"
+            Console.WriteLine("|"+amet.PadLeft(30)+"|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
+            Console.WriteLine("|"+amet.PadRight(30)+"|");   // kuni parameetris asuva arvuni. kui sõne on pikem kui parameeter, ei lisata midagi
+            Console.WriteLine("""                           
+                                [Verse 1]
+                We're talking away
+                No, I don't know what I'm to say
+                I'll say it anyway
+                Today is another day to find you
+                Shyin' away
+                I'll be comin' for your love, okay?
+
+                [Chorus]
+                Take on me (Take on me)
+                Take me on (Take on me)
+                I'll be gone
+                In a day or two
+                """);                                       // Kolm jutumärgipaari on sõne eraldi väljendusviis, mis hoiab sisendandmete vorminduse
+                                                            // alles, kõik reavahetused mis on, kõik jutumärgid, jne ilma "\" vajamata.
+
+            /* Stringi elementide adresseerimine */
+            //kuna string on massiiv tähtedest, siis saab stringi elemente/tähti adresseerida nagu tavalist massiivi.
+            foreach (var täht in perekonnanimi)
+            {
+                Console.WriteLine(täht);
+            }
+            for (int i = 0; i < perekonnanimi.Length; i++)
+            {
+                Console.WriteLine(perekonnanimi[i]);
+            }
+
+            //sarnaselt massiivile saab ka elemndi sisu järgi .IndexOf meetodiga teada esimese vastava elemendi indeksit/asukohta massiivis.
+            Console.WriteLine(perekonnanimi.IndexOf("r")); 
+
+            //Console.ReadLine();
+
             ///*   -= K O M P O S I I T A N D M E T Ü Ü B I D =-   */
             //1. Massiiv    
             //2. Loend
@@ -493,10 +596,13 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                             //elementide arvust.
 
             // - - Massiivi sisemised meetodid - -
-            int kuiPaljuOn = uusMassiiv.Length;     //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
-                                                    //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
-                                                    //väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, sest poolikuid või osalisi
-                                                    //elemente ei ole olemas.
+            int kuiPaljuOn = uusMassiiv.Length;         //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
+                                                        //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
+                                                        //väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, sest poolikuid või osalisi
+                                                        //elemente ei ole olemas.
+            int kasOn = Array.IndexOf(uusMassiiv, 2);   //Massiivi meetod "IndexOf" mille saame kasutusele võtta punkti abil andmetüübist endast võtab
+                                                        //sisse kaks parameetrit, massiivi enda ja otsitava elemendi, ja tagastab meile indeksi kus
+                                                        //ESIMENE vastav element asub. -1 kui ei leita, 0 kui on tühi.
 
             /* 2 - LOEND */
             // List<T>   -> Loend on komposiitandmetüüp, kus sarnaselt massiiviga, saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
