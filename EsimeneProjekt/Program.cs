@@ -469,6 +469,8 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //var x = 123; //Umbmäärase andmetüübiga ajutine muutuja
             //var y = "ABC";
             //bool jahvõiei = false; //kas true või false.
+            //void - On andmetüüp, mida muutuja tekitamisel kasutada ei saa, kasutatakse ainult meetodite signatuurides väljendamiseks et meetod ei
+            //       tagasta midagi.
 
             ///*   -= S Õ N E T Ö Ö R I I S T A D =-               */
             // Sõnetööriistad on tekstilise andme töötluseks tööriistad mis teevad kasutajale mingid tegevused ära, või tuvastavad midagi.
@@ -965,6 +967,132 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 Console.WriteLine(üksSõna);     //Antud juhul, kuvatakse element välja.
             }
             //NB - Tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. Kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud.
+        }
+            /*   -= M E E T O D I D =-                               */
+
+        //Meetodid on väljakutsutavad koodijupid või alamprogrammid. Meetodid teostavad tavaliselt mingeid spetsiifilisi funktsioone või tegevusi.
+        //Meetodid lasevad programmeerijal taaskasutada oma eelnevalt kirjutatud koodi - write once use many.
+        //Meetodeid on kahte liiki - Ühed, mis tagastavad mingisuguse töö või tegevuse tagajärjel või muu tulemuse saavutamisel andmeid, ja teised
+        //mis ei tagasta midagai, kuid omavad siiski mingit tegevust.
+
+        //Meetodi anatoomia:
+        //Meetodi olemus sisaldab endas kolme vajalikku komponenti. Meetodi enda omadused ja nimi, parameetrid ning meetodi kood ise.
+        //Meetodi omadused ja nimi ning parameetrid moodustavad meetodi signatuuri, ning sellele järgneb loogelistes sulgudes {}
+        //koodiplokk mida vastav meetod väljakutsel täidab.
+
+        //Meetodi signatuur on kõige esimene rida, mis meetodi tekitamiseks kirjutatakse, ning mis kirjeldab meetodit ennast ja selle omadusi
+        //Signatuur aga koosneb ise ka mitmest või kõigist järgnevatest. Nendeks on juurdepääsu modifikator, tagastustüüp, meetodi enda nimi,
+        //olenevalt liigist ka parameetrid sulgude vahel () ja peale signatuuri koodiplokk.
+
+        //   A  - Juurdepääsu modifikaator ütleb ära kust ja kuyidas seda meetodit välja kutsuda või adresseerida saab. Tähtsamaid neist on 4-5 tükki:
+        // 0. ---------     - Modifikaatori puudumisel kompilaator annab meetodile sobiva variandi automaatselt.
+        // 1. "public"      - meetod on avalik ja kättesaadav ka teistes klassides, peale selle klassi/projekti kus meetod ise asub.
+        // 2. "private"     - meetod on kättesaadav ainult selles klassis kus meetod ise asub.
+        // 3. "protected"   - meetod on kättesaadav klassis kus ta asub ning kõikides klassides mis päriluse kaudu omab selle klassi andmeid.
+        // 4. "internal"    - meetod on juurdepääsetav ainult projektis kus ta asub. Samas projektis saavad teised klassid seda kasutada, aga
+        //                  mitte projektist väljaspool asuvad klassid.
+        // 5. "static"      - Meetodit on ainult üks.
+
+        //   B  - Tagastustüüp on meetodi omadus, mis ütleb ära millise tüübiga andmeid meetodi väljakutsumise asukohta tagastatakse, kui üldse.
+        // Andmetüüp mida tagastatakse võib olla ükskõik milline liht- või kombinatsioonandmetüüp. Aga kui meetod ei tagasta üldse andmeid, on
+        // selle meetodi enda andmetüüp "void". Kui meetodil on tagastustüüp mis on midagi muud kui void, on meetodi sees iga toimiva koodisuuna
+        // lõpus kaitstud sõna "return", return ütleb, et just see asi on vaja tagastada. Peale returni on alati tagastatavad andmed või muutuja
+        // mis sisaldab tagastatavaid andmeid. Olenevalt meetodist saab tagastuseks olla ka tegevus. Need andmed antakse tagasi sinna kust meetod
+        // kutsuti, ning peale sõna return muud koodi ei täideta. Return katkestab meetodi töö.
+
+        //   C  - Meetodi enda nimi on midagi mille järgi arendaja meetodit kasutab. Nimi omab samat funktsiooni nagu näiteks muutuja nimi mille
+        // sees on muutuja andmed. Meetodi nime kirjutamisel või väljamõtlemisel võiks meetodi nime kirjutada tegevuse järgi mida meetod teeb, 
+        // mitte kus ta käib ega mõni muu kõrvaline või arusaamatu asi. Näide: Kui arendaja kirjutab meetodi nimega "A()", siis see meetodi nimi
+        // ei ütle ta meeskonnakaaslasele/talle endale tulevikus mitte midagi, aga meetodi nimi "ArvutaArvudKokku()" ütleb selgelt ära, mille
+        // jaoks meetod on. Ta ei raiska oma aega meetodi sisse vaatamiseks, et lugeda koodi ning ise nuputada mida meetod teeb.
+
+        //   D  - Parameetrid on väljad mis ütlevad mida meetodil meetodi tööks vaja on, ning mis on vaja sulgude vahele lisada meetodi
+        // väljakutseasukohas. Parameetri muutuja nimi võib olla väljendatud teistmoodi kui selle meetodiga kasutatavad andmed ise.
+        // Parameetreid on kahte sorti, kohustuslikud ja optional ehk valikuline. Valikulise parameetri väljendusel pannakse andmetüübi taha
+        // küsimärk. On olemas ka vaikeväärtusega parameetrid, kus muutujale, väärtuse puudumisel antakse signatuuris mingisugune väärtus ette ära.
+
+        // 1. tüüpi meetod - ei tagasta andmeid:
+
+        // A      A     B       C   D
+        public static void UusMeetod()  //Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, ning tagastustüüp on void.
+                                        //Pärast omadusi on meetodi nimi "UusMeetod" peale mida on sulud "()" mille vahel parameetreid määratud ei ole.
+        {                               //Peale signatuuri on koodiplokk
+            Console.WriteLine("Tere");  //Kus kuvatakse kasutajale tekst "Tere"
+        }
+
+        // 2. tüüpi meetod - tagastab mingisuguse väärtuse või mingeid andmeid:
+        int[] arvutatavadArvud = new int[] {67,69,420,9001 }; //Töödeldavad andmed, mis asuvad täisarvumassiivis *VÄLJASPOOL* meetodit.
+        // A      A    B       C         D
+        public static int ArvutaKokku(int[] arvud)  //Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, tagastustüüp
+                                                    //"int" ütleb et meetod tagastab andmeid üksiku täisarvuna. Meetodi nimi on "ArvutaKokku", ning
+                                                    //meetodile on antud üks kohustuslik parameeter arvumassiiv mille muutuja nimi meetodi sees on
+                                                    //"arvud"
+        {
+            //meetodi sisu arvutab järjendis olevad arvud foreachi ja += omistusoperatsiooniga kokku muutujasse "summa"
+            int summa = 0;
+            foreach (var arv in arvud)
+            {
+                summa += arv;
+            }
+            return summa; //ning meetodi lõpus, kasutades kaitstud sõna "return" tagastab muutujas "summa" oleva väärtuse.
+        }
+
+        //Meetodi väljakutse:
+        //Hetkel käivitatud koodis, kutsutakse meetod välja ainult tema nimepidi + vajalikud parameetrid (kui neid on)
+        //
+        //  /.mingi muu kood./
+        //
+        //  ArvutaKokku(arvutatavadArvud)
+        //
+        //  /.mingi muu kood./
+        //
+        // Erinevalt kõigest muust, ei ole meetodi näidis konspektis funktsioneeriv.
+
+        /* Valikuline ja kohustuslik parameeter */
+        public void MillineTekst(int vanus, int? pikkus) //Meetodi signatuuris kus on parameetrid on asetatud üks kohustuslik parameeter "vanus", ja üks
+                                                         //valikuline parameeter "pikkus". Valikulist parameetrit tähistatakse peale andmetüüpi oleva
+                                                         //küsimärgiga. Küsimärk ütleb, et muutujas olev väärtus on nullable, ehk meetod otseselt ei vaja seda
+                                                         //ta *võib* olemas olla.
+        {
+            int arv = (int)pikkus;                       //kui non-nullable muutujasse väärtustada nullable muutujast väärtus, on vajalik ka castimine.
+            if (vanus < 18)
+            {
+                Console.WriteLine("Kõtt, alakaid ei taha");
+            }
+            else if (vanus >= 18)
+            {
+                if (pikkus != null)
+                {
+                    if (pikkus <= 170)
+                    {
+                        Console.WriteLine("Saad juua ainult 2 liitrit monsterit");
+                    }
+                    else if (pikkus <= 200)
+                    {
+                        Console.WriteLine("Saad juua kuni 4 liitrit monsterit");
+                    }
+                }
+                else 
+                {
+                    Console.WriteLine("Saad juua 2 liitrit monsterit");
+                }
+            }
+        }
+
+        /* parameetrite vaikeväärtus */
+        public string KeskmineTase(float veetase = 1.5f)    //Meetodi signatuuris on asetatud sulgude vahele üks parameeter "veetase" mille taga on võrdusmärk
+                                                            //väärtusega. Meetodi signatuuris ütleb võrdusmärk, et tegu on väikeväärtusega, ning kui meetodile
+                                                            //ei anta kaasa sissetulevat väärtust, arvestatakse et väärtuseks on sulgude taga olev anne.
+                                                            //Antud juhul 1.5f
+        {
+            if (veetase > 1.5)
+            {
+                return "liiga kõrge";
+            }
+            else
+            {
+                return "normaalne";
+            }
         }
     }
 }
