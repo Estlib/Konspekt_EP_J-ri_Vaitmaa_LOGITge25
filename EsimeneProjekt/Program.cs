@@ -1,4 +1,5 @@
-﻿using System; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
+﻿using System;
+using System.Text; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 //süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
 //failist.
 
@@ -967,8 +968,70 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 Console.WriteLine(üksSõna);     //Antud juhul, kuvatakse element välja.
             }
             //NB - Tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. Kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud.
+
+            /*   -= F A I L I O P E R A T S I O O N I D              */
+
+            // Kui prorammil on vaja oma töö tulemust salvestada või lugeda mingeid andmeid sisse mis ei pärine kasutajalt ega programmilt
+            // endalt, on võimalus need andmed sisse lugeda failist või siis talletada andmeid failis.
+            // Failioperatsioonide tegemiseks on vaja kasutada usinguna Süsteemi in-out operatsioone, see tuleb moodulist System.IO
+
+            /* LUGEMINE */
+
+            string loetudFailiSisu = File.ReadAllText("failinimi.txt");
+            //ReadAllText("failinimi.laiend") - Loeb kirjeldatud failist, mis asub programmiga täpselt samas kaustas, kogu sisu tekstina.
+            string[] loetudFailiSisu2 = File.ReadAllLines("failinimi.txt");
+            //ReadAllLines("failinimi.laiend") - Loeb kirjeldatud failist, mis asub programmiga täpselt samas kaustas, kogu sisu stringide järjendina
+            //kus iga element on üks rida kogu failist.
+            byte[] loetudFailibaidid = File.ReadAllBytes("failinimi.txt");
+            //ReadAllBytes("failinimi.laiend") - Loeb kirjeldatud failist, mis asub programmiga täpselt samas kaustas, kogu sisu baitidena.
+
+            /* KIRJUTAMINE */
+
+            File.WriteAllText("/väljund.txt", loetudFailiSisu);
+            //WriteAllText("väljundfail.laiend", "sisu mida kirjutada") - Kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili
+            //kus on tekst, mis asub teise parameetri sees.
+            File.WriteAllLines("/väljund2.txt", loetudFailiSisu2);
+            //WriteAllLines("väljundfail2.laiend", "sisu järjendis mida kirjutada") - Kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili
+            //kus on sisu stringide järjendist, mis asub teise parameetri sees.
+            File.WriteAllBytes("/väljundbaidid.txt", loetudFailibaidid);
+            //WriteAllBytes("väljundfailbaidid.laiend", "sisu baidijärjendis mida kirjutada") - Kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili
+            //mis koosneb järjendis olevatest baitidest, mis asub teise parameetri sees.
+
+            //Kõik kirjutusmeetodid kirjutavad vaikimisi juba samanimelise eksisteeriva faili üle, kui fail eksisteerib.
+            //Kui fail ei eksisteeri, see tekitatakse.
+
+            /* MUUD */
+
+            File.Exists("/väljund.txt");
+            //Exists("/väljundfail.laiend") - kontrollib kas selles asukohas on olemas sellise nimega ja sellise laiendiga fail.
+            //Kui on, tagastab "true",
+            //kui ei ole, tagastab "false"
+
+            File.Delete("/väljund.txt");
+            //Delete("/väljundfail.laiend") - Kustutab kindlas asukohas ärakirjeldatud faili
+
+            File.Create("/väljund.txt");
+            //Create("/väljundfail.laiend") - Tekitab uue tühja faili, valitud asukohta valitud laiendiga. Kui see fail juba on olemas, siis olemasolev
+            //fail tühjendatakse, ehk trunkeeritakse.
+
+            File.Copy("/väljund.txt", "/väljundCOPY.txt");
+            //Copy("/väljundoriginaal.laiend", "/väljundkoopia.laiend") - Tekitab uue samasuguse faili, esimese parameetrina kirjeldatud failist ja asukohast,
+            //ning asetab ta teise parameetrisse seatud asukoha, failinime ja laiendiga.
+
+            File.Copy("/väljund.txt", "/väljundCOPY.txt", false);
+            //Copy("/väljundoriginaal.laiend", "/väljundkoopia.laiend", bool Ülekirjutaja) - Tekitab uue samasuguse faili, esimese parameetrina kirjeldatud
+            //failist ja asukohast, ning asetab ta teise parameetrisse seatud asukohta, koos failinime ja laiendiga, kui fail juba on olemas, siis, false
+            //puhul on ülekirjutamine keelatud, true puhul ülekirjutamine lubatud
+
+            File.Replace("/väljund.txt", "/sihtfail.txt", "/sihtfailBACKUP.txt");
+            //Replace, asendab esimeses parameetris oleva faili sisu, kirjutab uue faili, teise parameetri asukohta, kustutades originaalse faili,
+            //ja asetab ka back up faili.
+
+            File.AppendText("/väljund.txt");
+            //AppendText lisab olemasolevale failile juurde sisu parameetris spesifitseeritud failile. Kui fail ei eksisteeri enam, tekitatakse see
+            //uuesti.
         }
-            /*   -= M E E T O D I D =-                               */
+        /*   -= M E E T O D I D =-                               */
 
         //Meetodid on väljakutsutavad koodijupid või alamprogrammid. Meetodid teostavad tavaliselt mingeid spetsiifilisi funktsioone või tegevusi.
         //Meetodid lasevad programmeerijal taaskasutada oma eelnevalt kirjutatud koodi - write once use many.
