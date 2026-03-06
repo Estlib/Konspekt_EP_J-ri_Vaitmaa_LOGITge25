@@ -46,13 +46,25 @@
             //    }
             //    Console.WriteLine($"Tehte tulemus on: {arv1} {tehteTüüp} {arv2} = {tehteTulemus}");
             //}
-            Console.WriteLine("Sisesta oma nimi");
-            string kasutajanimi = GetAnswer();
-            Console.WriteLine("Tere "+kasutajanimi);
-            Console.WriteLine("Palun sisesta ka oma tänavanimi");
-            string tänavanimi = GetAnswer();
-            Console.WriteLine(kasutajanimi+ " ahha! elad "+tänavanimi+" tänaval");
-            IsPensionär();
+            const string nameOfFile = "kasutajatanav.txt";
+            if (File.Exists(nameOfFile))
+            {
+                string[] tervitus = File.ReadAllLines(nameOfFile);
+                Console.WriteLine(tervitus[0]);
+            }
+            else
+            {
+                Console.WriteLine("Sisesta oma nimi");
+                string kasutajanimi = GetAnswer();
+                Console.WriteLine("Tere " + kasutajanimi);
+                Console.WriteLine("Palun sisesta ka oma tänavanimi");
+                string tänavanimi = GetAnswer();
+                string failisisu = kasutajanimi + " ahha! elad " + tänavanimi + " tänaval";
+                Console.WriteLine(failisisu);
+                File.WriteAllText(nameOfFile, failisisu);
+            }
+
+            //IsPensionär();
             //küsi kasutajalt tema vanust, meetod selgitab välja kas ta on pensionär või mitte, ning meetod ise kuvab sõnumi vastavalt kas on või ei;
             // kui on - ütle "Kuidas jalad liiguvad? hästi?"
             // kui ei ole - ütle "Mitu monsterit päevas jood?"
@@ -67,7 +79,7 @@
             {
                 Console.WriteLine("Kuidas jalad liiguvad? hästi?");
             }
-            else 
+            else
             {
                 Console.WriteLine("Mitu monsterit päevas jood?");
             }

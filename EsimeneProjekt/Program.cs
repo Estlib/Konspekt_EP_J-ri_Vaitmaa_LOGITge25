@@ -1027,8 +1027,8 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //Replace, asendab esimeses parameetris oleva faili sisu, kirjutab uue faili, teise parameetri asukohta, kustutades originaalse faili,
             //ja asetab ka back up faili.
 
-            File.AppendText("/väljund.txt");
-            //AppendText lisab olemasolevale failile juurde sisu parameetris spesifitseeritud failile. Kui fail ei eksisteeri enam, tekitatakse see
+            File.AppendAllText("/väljund.txt", loetudFailiSisu);
+            //AppendAllText lisab olemasolevale failile juurde sisu parameetris spesifitseeritud failile. Kui fail ei eksisteeri enam, tekitatakse see
             //uuesti.
         }
         /*   -= M E E T O D I D =-                               */
