@@ -23,6 +23,9 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
         // D - Struktuuri omadused, nende kaudu saab kasutatavas koodis selle struktuuri andmeid kätte. Adresseeritakse nagu meetodeid teistest
         //      andmetüüpidest punkti abil, ning peale punkti saab valida soovitud välja.
         //      "Get();" (D.1) on vaikemeetod, mis tagastab välja andmed ning "Set();" (D.2) laseb seda seada.
+        //      Structi omadusele saab anda vaikeväärtuse. Vaikeväärtus on midagi mis antakse
+        //      selle structi tüüpi uuele objektile kaasa, selle objekti tekitamise hetkel, kui
+        //      ei ole sellele väljale väärtust antud.(D.3)
         // E - Struktuuris asuvad meetodid, saab kirjutada üle overrideiga vaikemeetodeid või saab omada struktuurile omaseid meetodeid
 
         // A.1  A.2   A.3
@@ -39,12 +42,11 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 X = x; //C selles konstruktoris on kaks andmevälja
                 Y = y;
             }
-            // ctor 0
 
             //                D.1  D.2
             public double X { get; set; } //D - struktuuri omadused
             public double Y { get; set; }
-            public double Z { get; set; }
+            public double Z { get; set; } = 0;//D.3
             //E selle "Kordinaat" struct meetodid:
             public override string ToString() 
             {
@@ -55,6 +57,18 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 Console.WriteLine("Tere maailm.");
             }
         }
+
+        /* 6 - ENUM */
+        // Enum on spetsiaalset tüüpi klass, mis koosneb ainult readonly muutmatutest väärtustest. Sarnaselt muude objektide addresseerimisega, saab enumi seest
+        // tema muutujaid lugeda punkti abil. Enum kujutab endast tegelikult täisarvude loendit, millele on antud inimloetavad nimed.
+        enum HäireTase 
+            //enum sätestatakse kaitstud sõnaga "enum", seejärel enumi enda nimi ("HäireTase") ning sellele järgnevas koodiplokis enumi enda väärtused,
+            //eraldatuna komadega.
+        {
+            Madal, Keskmine, Kõrge, Kriitiline
+        }
+
+
         static void Main(string[] args) //<-- "Main" on programmi sees olev meetod mis vaikeväärtusena alati käivitatakse, kui ei ole teist meetodit
                                         //käivituseks määratud
         {
@@ -478,6 +492,17 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //    }
             //    Console.WriteLine(displayableData);
             //}
+
+            //Teeme auto
+            Car minuParsa = new Car(
+                "Yaris", CarMark.Toyota,
+                "ABC 123",
+                "vene kollane",
+                (decimal)1.67,
+                new List<string> { "uksed", "aknad" }
+                );
+            Console.WriteLine(minuParsa.GetInfo());
+            minuParsa.SeeEquiptment();
 
             Kordinaat minuAsukoht = new Kordinaat(); //Teeme uue muutuja "minuAsukoht" mille andmetüüp ongi meie enda struct,
                                                      //kaitstud sõna "new" tekitab sinna sisse uue tühja kordinaadi.
