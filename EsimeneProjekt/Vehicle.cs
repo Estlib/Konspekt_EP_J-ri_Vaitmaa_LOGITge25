@@ -36,10 +36,11 @@ namespace EsimeneProjekt
         public decimal EmptyWeight { get; set; } = 0;
         public List<string>? Equiptment { get; set; } 
         /// <summary>
-        /// Returns info about this car
+        /// Returns general info about Vehicle
         /// </summary>
         /// <returns>Human-readable sentence as a string</returns>
-        public string GetInfo()
+        public virtual string GetInfo()
+            //Baasklassi meetod "GetInfo" omab kaitstud sõna virtual, mis laseb siin klassis olevat meetodit, seda klassi pärivatel klassidel kaitstud sõnaga "override" asendada.
         {
             return $"This is a {Mark} {Model}, it is {Colour} color and weighs {EmptyWeight} Tons.\nLicense plate number is {LicensePlate}";
         }

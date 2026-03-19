@@ -1,4 +1,5 @@
 ﻿using ClassLibrary1;
+using EsimeneProjekt.Vehicles;
 using System;
 using System.Text; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 //süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
@@ -507,6 +508,16 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
 
             Class1 thingForMe = new Class1("teginuueprojekti");
             thingForMe.WhatsTheWord();
+
+            //Teeme rongi
+            Train minuRong = new Train(
+                "Yaris", CarMark.Toyota,
+                "ABC 123",
+                "vene kollane",
+                (decimal)1.67,
+                new List<string> { "uksed", "aknad" }
+                );
+            minuRong.GetInfo();
 
             Kordinaat minuAsukoht = new Kordinaat(); //Teeme uue muutuja "minuAsukoht" mille andmetüüp ongi meie enda struct,
                                                      //kaitstud sõna "new" tekitab sinna sisse uue tühja kordinaadi.
