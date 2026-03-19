@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 using System.Text; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 //süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
 //failist.
@@ -494,7 +495,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //}
 
             //Teeme auto
-            Car minuParsa = new Car(
+            Vehicle minuParsa = new Vehicle(
                 "Yaris", CarMark.Toyota,
                 "ABC 123",
                 "vene kollane",
@@ -503,6 +504,9 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 );
             Console.WriteLine(minuParsa.GetInfo());
             minuParsa.SeeEquiptment();
+
+            Class1 thingForMe = new Class1("teginuueprojekti");
+            thingForMe.WhatsTheWord();
 
             Kordinaat minuAsukoht = new Kordinaat(); //Teeme uue muutuja "minuAsukoht" mille andmetüüp ongi meie enda struct,
                                                      //kaitstud sõna "new" tekitab sinna sisse uue tühja kordinaadi.

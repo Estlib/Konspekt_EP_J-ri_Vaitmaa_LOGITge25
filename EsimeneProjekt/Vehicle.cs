@@ -10,9 +10,10 @@ namespace EsimeneProjekt
     {
         Toyota,Ford,Trashla,Subaru,Saab,Volvo,BMW,Mini,Škoda,
     }
-    public class Car
+    public class Vehicle
     {
-        public Car(
+
+        public Vehicle(
             string model, 
             CarMark mark, 
             string plate, 
